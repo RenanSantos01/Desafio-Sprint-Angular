@@ -10,18 +10,38 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  username: string | null = '';
+  username = localStorage.getItem('username') || 'Usuário';
+  menuOpen = false;
 
   constructor(private router: Router) {}
 
-  ngOnInit() {
-    this.username = localStorage.getItem('username');
+  // 🔹 Alterna a abertura e fechamento do menu lateral
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+    console.log(`📂 Menu lateral ${this.menuOpen ? 'aberto' : 'fechado'}`);
   }
 
-  logout() {
-    localStorage.removeItem('isLoggedIn');
+  // 🔹 Faz logout e redireciona para o login
+  logout(): void {
+    console.log('🟡 Clique no botão Sair detectado');
+
+    // Fecha o menu lateral
+    this.menuOpen = false;
+
+    // Remove dados de login
     localStorage.removeItem('username');
-    this.router.navigate(['/login']);
+    localStorage.removeItem('isLoggedIn');
+    sessionStorage.clear();
+
+    // Exibe uma mensagem opcional
+    alert('Você saiu da sua conta.');
+
+    // Redireciona para a tela de login
+    this.router.navigate(['/login']).then(() => {
+      console.log('✅ Redirecionamento para /login executado');
+      // Impede retorno à Home pelo botão voltar
+      window.history.pushState(null, '', '/login');
+      window.history.replaceState(null, '', '/login');
+    });
   }
 }
-

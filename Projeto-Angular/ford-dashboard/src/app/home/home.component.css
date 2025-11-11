@@ -3,57 +3,65 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f5f5f5;
-  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #003366, #0055aa);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .welcome-box {
-  background: #fff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 60px;
+  border-radius: 15px;
   text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
 }
 
-h2 {
-  color: #0076ce;
-  margin-bottom: 10px;
+.welcome-box h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #ffffff;
 }
 
-p {
-  color: #333;
-  margin-bottom: 25px;
+.welcome-box p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #e0e0e0;
 }
 
 .buttons {
   display: flex;
+  gap: 20px;
   justify-content: center;
-  gap: 15px;
 }
 
-button {
-  padding: 10px 20px;
+.dashboard-btn,
+.logout-btn {
+  padding: 12px 25px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 14px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
+/* 🔹 Botão do Dashboard */
 .dashboard-btn {
-  background-color: #0076ce;
+  background-color: #007bff;
   color: white;
 }
 
 .dashboard-btn:hover {
-  background-color: #005fa3;
+  background-color: #0056b3;
 }
 
+/* 🔹 Botão de Sair */
 .logout-btn {
-  background-color: #d9534f;
+  background-color: #c62828;
   color: white;
 }
 
 .logout-btn:hover {
-  background-color: #b52b27;
+  background-color: #e53935;
 }
