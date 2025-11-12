@@ -15,6 +15,10 @@ export class HomeComponent {
 
   constructor(private router: Router) {}
 
+  goToDashboard() {
+    this.router.navigate(['/dashboard']);
+  }
+
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }

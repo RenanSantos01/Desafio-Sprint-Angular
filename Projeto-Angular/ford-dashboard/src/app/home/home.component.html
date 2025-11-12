@@ -7,13 +7,11 @@
     <button class="menu-btn" (click)="toggleMenu()">☰</button>
   </div>
 
-  <!-- 🔹 Botão de sair (🚪) -->
-  <button class="logout-btn" (click)="logout()">🚪 Sair</button>
-
   <!-- 🔹 Menu lateral -->
   <div class="side-menu" [class.open]="menuOpen">
     <a routerLink="/home" (click)="toggleMenu()">🏠 Home</a>
-    <a routerLink="/dashboard" (click)="toggleMenu()">📊 Dashboard</a>
+    <button class="dashboard-btn" (click)="goToDashboard(); toggleMenu()">📊 Dashboard</button>
+    <button class="logout-btn" (click)="logout()">🚪 Sair</button>
   </div>
 
   <!-- 🔹 Conteúdo principal (empurrado pelo menu) -->

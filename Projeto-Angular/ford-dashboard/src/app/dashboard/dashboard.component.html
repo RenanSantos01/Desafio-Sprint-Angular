@@ -1,1 +1,33 @@
-<p>dashboard works!</p>
+<div class="dashboard-page">
+  <!-- Título do dashboard -->
+  <h2>Dashboard de Veículos</h2>
+
+  <!-- Área de busca -->
+  <div class="search-section">
+    <label for="searchModel">Buscar modelo:</label>
+    <input
+      id="searchModel"
+      type="text"
+      [(ngModel)]="searchModel"
+      placeholder="Digite o modelo do veículo"
+    />
+    <button class="dashboard-btn" (click)="selectVehicle({ model: searchModel })">
+      Buscar
+    </button>
+  </div>
+
+  <!-- Exibição dos dados do veículo selecionado -->
+  <div *ngIf="selectedVehicle" class="vehicle-info">
+    <h3>Veículo encontrado:</h3>
+    <p><strong>Modelo:</strong> {{ selectedVehicle.model }}</p>
+    <p><strong>Código:</strong> {{ selectedVehicle.code }}</p>
+  </div>
+
+  <div *ngIf="vehicleData" class="vehicle-data">
+    <h3>Dados detalhados:</h3>
+    <p><strong>Ano:</strong> {{ vehicleData.year }}</p>
+    <p><strong>Cor:</strong> {{ vehicleData.color }}</p>
+    <p><strong>Status:</strong> {{ vehicleData.status }}</p>
+    <!-- Adicione mais campos conforme necessário -->
+  </div>
+</div>

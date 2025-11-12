@@ -39,9 +39,12 @@
 
 /* 🔹 Botão de sair */
 .logout-btn {
-  position: fixed;
+  /* Remova ou comente estas linhas de posicionamento fixo */
+  /* position: fixed;
   top: 20px;
-  right: 20px;
+  right: 20px; */
+  margin: 30px 25px 0 25px; /* ⬅️ adicione margem para espaçamento interno */
+  width: calc(100% - 50px); /* ⬅️ botão ocupa quase toda largura da barra */
   background-color: #c62828;
   color: white;
   border: none;
@@ -75,7 +78,7 @@
   padding-top: 80px;
   transition: transform 0.3s ease;
   transform: translateX(-220px);
-  z-index: 10;
+  z-index: 100; /* ⬅️ aumente o z-index aqui */
 }
 
 .side-menu.open {
@@ -104,6 +107,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* ⬅️ adicione position: relative */
+  z-index: 1;         /* ⬅️ defina z-index menor que a side-menu */
 }
 
 .main-content.shift {
@@ -129,4 +134,21 @@ h2 {
 
 p {
   color: #333;
+}
+
+.dashboard-btn {
+  background: none;
+  border: none;
+  padding: 15px 25px;
+  color: #003366;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s ease, color 0.3s ease;
+  width: 100%;
+}
+.dashboard-btn:hover {
+  background-color: rgba(0, 118, 206, 0.8);
+  color: white;
 }
