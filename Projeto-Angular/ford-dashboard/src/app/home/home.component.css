@@ -1,67 +1,132 @@
-.home-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.home-page {
+  position: relative;
+  width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, #003366, #0055aa);
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.welcome-box {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 40px 60px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
-}
-
-.welcome-box h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #ffffff;
-}
-
-.welcome-box p {
-  font-size: 16px;
-  margin-bottom: 30px;
-  color: #e0e0e0;
-}
-
-.buttons {
+  overflow: hidden;
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
 }
 
-.dashboard-btn,
-.logout-btn {
-  padding: 12px 25px;
+/* 🔹 Imagem de fundo */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.9);
+}
+
+/* 🔹 Botão do menu lateral */
+.menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 15;
+}
+
+.menu-btn {
+  background: none;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 30px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  color: #003366;
 }
 
-/* 🔹 Botão do Dashboard */
-.dashboard-btn {
-  background-color: #007bff;
-  color: white;
-}
-
-.dashboard-btn:hover {
-  background-color: #0056b3;
-}
-
-/* 🔹 Botão de Sair */
+/* 🔹 Botão de sair */
 .logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
   background-color: #c62828;
   color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 15;
 }
 
 .logout-btn:hover {
   background-color: #e53935;
+}
+
+/* 🔹 Menu lateral */
+.side-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  transition: transform 0.3s ease;
+  transform: translateX(-220px);
+  z-index: 10;
+}
+
+.side-menu.open {
+  transform: translateX(0);
+}
+
+.side-menu a {
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #003366;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.side-menu a:hover {
+  background-color: rgba(0, 118, 206, 0.8);
+  color: white;
+}
+
+/* 🔹 Área principal empurrada */
+.main-content {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  transition: margin-left 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content.shift {
+  margin-left: 220px; /* empurra tudo suavemente */
+}
+
+/* 🔹 Cartão central */
+.welcome-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  max-width: 400px;
+  margin: auto;
+}
+
+h2 {
+  color: #0076ce;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #333;
 }

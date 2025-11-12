@@ -1,16 +1,26 @@
-<div class="home-container">
-  <div class="welcome-box">
-    <h2>Bem-vindo, {{ username }}!</h2>
-    <p>Você acessou o sistema com sucesso.</p>
+<div class="home-page">
+  <!-- 🔹 Imagem de fundo -->
+  <img src="assets/ford-car.png" alt="Ford Background" class="background-image" />
 
-    <div class="buttons">
-      <button routerLink="/dashboard" class="dashboard-btn">
-        📊 Ir para o Dashboard
-      </button>
+  <!-- 🔹 Botão de menu (☰) -->
+  <div class="menu">
+    <button class="menu-btn" (click)="toggleMenu()">☰</button>
+  </div>
 
-      <button (click)="logout()" class="logout-btn">
-        🚪 Sair
-      </button>
+  <!-- 🔹 Botão de sair (🚪) -->
+  <button class="logout-btn" (click)="logout()">🚪 Sair</button>
+
+  <!-- 🔹 Menu lateral -->
+  <div class="side-menu" [class.open]="menuOpen">
+    <a routerLink="/home" (click)="toggleMenu()">🏠 Home</a>
+    <a routerLink="/dashboard" (click)="toggleMenu()">📊 Dashboard</a>
+  </div>
+
+  <!-- 🔹 Conteúdo principal (empurrado pelo menu) -->
+  <div class="main-content" [class.shift]="menuOpen">
+    <div class="welcome-card">
+      <h2>Bem-vindo, {{ username }}!</h2>
+      <p>Você acessou o sistema com sucesso.</p>
     </div>
   </div>
 </div>

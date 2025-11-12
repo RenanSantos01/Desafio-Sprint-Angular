@@ -1,6 +1,31 @@
 {
-    "users": [
-      { "id": 1, "username": "admin", "password": "1234" }
-    ]
-  }
-  
+  "users": [
+    { "id": 1, "username": "admin", "password": "1234" }
+  ],
+  "vehicle": [
+    { "id": 1, "model": "Ranger", "code": "2FRHDUYS2Y63NHD22454", "image": "ranger.png" },
+    { "id": 2, "model": "Mustang", "code": "5YTHD9EJ3H9D22345", "image": "mustang.png" }
+  ],
+  "vehicleData": [
+    {
+      "code": "2FRHDUYS2Y63NHD22454",
+      "totalSales": 15720,
+      "connected": 13400,
+      "softwareUpdated": 12000,
+      "model": "Ranger",
+      "year": 2024,
+      "price": 245000,
+      "status": "Ativo"
+    },
+    {
+      "code": "5YTHD9EJ3H9D22345",
+      "totalSales": 9200,
+      "connected": 8500,
+      "softwareUpdated": 7700,
+      "model": "Mustang",
+      "year": 2023,
+      "price": 485000,
+      "status": "Ativo"
+    }
+  ]
+}
