@@ -7,7 +7,6 @@
   min-height: 100vh;
 }
 
-/* 🔹 Título */
 .title {
   font-size: 2.3rem;
   font-weight: 700;
@@ -15,49 +14,21 @@
   text-transform: uppercase;
 }
 
-/* 🔹 Campo de busca / seleção */
+/* 🔹 Seleção de modelo */
 .search-box {
   margin-bottom: 40px;
 }
 
-/* 🔹 Input antigo (mantido para compatibilidade, caso volte a usar) */
-.search-box input {
-  padding: 10px 15px;
-  border: 2px solid #0076ce;
-  border-radius: 6px;
-  width: 260px;
-  font-size: 15px;
-  margin-right: 10px;
-  outline: none;
-  transition: 0.3s ease;
-}
-
-.search-box input:focus {
-  border-color: #005fa3;
-  box-shadow: 0 0 5px rgba(0, 118, 206, 0.5);
-}
-
-/* 🔹 Novo estilo do SELECT */
 .search-box select {
   padding: 10px 15px;
   border: 2px solid #0076ce;
   border-radius: 6px;
-  width: 260px;
   font-size: 15px;
+  width: 260px;
   margin-right: 10px;
   outline: none;
-  transition: 0.3s ease;
-  color: #003366;
-  background-color: white;
-  cursor: pointer;
 }
 
-.search-box select:focus {
-  border-color: #005fa3;
-  box-shadow: 0 0 5px rgba(0, 118, 206, 0.5);
-}
-
-/* 🔹 Botão de busca (opcional) */
 .search-box button {
   padding: 10px 18px;
   background-color: #0076ce;
@@ -65,7 +36,6 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .search-box button:hover {
@@ -87,51 +57,59 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   width: 220px;
   padding: 25px 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .card h3 {
   color: #0076ce;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
 }
 
 .card p {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #003366;
 }
 
-/* 🔹 Imagem do veículo */
-.vehicle-section {
-  margin: 50px auto;
-}
-
+/* 🔹 Imagem */
 .vehicle-image {
   width: 500px;
   max-width: 90%;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  margin: 40px 0;
 }
 
-/* 🔹 Tabela */
-.table-section {
-  margin-top: 40px;
-  padding: 20px;
+/* 🔹 Seção VIN */
+.vin-section {
+  margin-top: 50px;
 }
 
-.table-section h2 {
-  color: #003366;
-  font-weight: 600;
-  margin-bottom: 15px;
+.vin-search-box {
+  margin-bottom: 20px;
 }
 
-table {
+.vin-search-box input {
+  padding: 10px;
+  border: 2px solid #0076ce;
+  border-radius: 6px;
+  width: 300px;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.vin-search-box button {
+  padding: 10px 20px;
+  background-color: #0076ce;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.vin-search-box button:hover {
+  background-color: #005fa3;
+}
+
+/* 🔹 Tabela VIN */
+.vin-table table {
   width: 80%;
   margin: 0 auto;
   border-collapse: collapse;
@@ -141,18 +119,14 @@ table {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-th,
-td {
+.vin-table th,
+.vin-table td {
   padding: 12px 15px;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
-th {
+.vin-table th {
   background-color: #0076ce;
   color: white;
-}
-
-tr:hover {
-  background-color: #f2f2f2;
 }

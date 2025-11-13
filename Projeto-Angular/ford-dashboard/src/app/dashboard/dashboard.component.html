@@ -2,35 +2,33 @@
   <!-- 🔹 Título -->
   <h1 class="title">Dashboard Ford</h1>
 
-  <!-- 🔹 Seletor de modelos -->
+  <!-- 🔹 Seleção de veículo -->
   <div class="search-box">
-    <select [(ngModel)]="searchModel" (change)="selectVehicle({ model: searchModel })">
-      <option value="" disabled selected>Selecione um modelo...</option>
-      <option *ngFor="let vehicle of vehicles" [value]="vehicle.model">
-        {{ vehicle.model }}
-      </option>
+    <label for="modelSelect">Selecione o modelo:</label>
+    <select id="modelSelect" [(ngModel)]="selectedModel">
+      <option value="" disabled selected>Escolha um modelo</option>
+      <option *ngFor="let v of vehicles" [value]="v.model">{{ v.model }}</option>
     </select>
+    <button (click)="selectVehicle()">Buscar</button>
   </div>
 
-  <!-- 🔹 Cards de estatísticas -->
+  <!-- 🔹 Cards -->
   <div class="cards" *ngIf="vehicleData">
     <div class="card">
       <h3>Total de Vendas</h3>
       <p>{{ vehicleData.totalSales }}</p>
     </div>
-
     <div class="card">
       <h3>Veículos Conectados</h3>
       <p>{{ vehicleData.connected }}</p>
     </div>
-
     <div class="card">
       <h3>Software Atualizado</h3>
       <p>{{ vehicleData.softwareUpdated }}</p>
     </div>
   </div>
 
-  <!-- 🔹 Imagem do veículo -->
+  <!-- 🔹 Imagem -->
   <div class="vehicle-section" *ngIf="selectedVehicle">
     <img
       [src]="'assets/' + selectedVehicle.image"
@@ -39,30 +37,44 @@
     />
   </div>
 
-  <!-- 🔹 Tabela com dados -->
-  <div class="table-section" *ngIf="vehicleData">
-    <h2>Detalhes do Veículo</h2>
+  <!-- 🔹 NOVA SEÇÃO: Busca por VIN -->
+  <div class="vin-section">
+    <h2>Buscar por Código VIN</h2>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Código</th>
-          <th>Modelo</th>
-          <th>Ano</th>
-          <th>Preço</th>
-          <th>Status</th>
-        </tr>
-      </thead>
+    <div class="vin-search-box">
+      <input
+        type="text"
+        placeholder="Digite ou cole o código VIN..."
+        [(ngModel)]="vinCode"
+      />
+      <button (click)="searchByVin()">Buscar</button>
+    </div>
 
-      <tbody>
-        <tr>
-          <td>{{ vehicleData.code }}</td>
-          <td>{{ vehicleData.model }}</td>
-          <td>{{ vehicleData.year }}</td>
-          <td>R$ {{ vehicleData.price | number:'1.0-0' }}</td>
-          <td>{{ vehicleData.status }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- 🔹 Exibir dados VIN -->
+    <div class="vin-table" *ngIf="vinData">
+      <h3>Detalhes do Veículo</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Código - VIN</th>
+            <th>Odômetro</th>
+            <th>Nível de Combustível</th>
+            <th>Status</th>
+            <th>Lat.</th>
+            <th>Long.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ vinData.code }}</td>
+            <td>{{ vinData.odometro }}</td>
+            <td>{{ vinData.nivelCombustivel }}</td>
+            <td>{{ vinData.status }}</td>
+            <td>{{ vinData.lat }}</td>
+            <td>{{ vinData.long }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

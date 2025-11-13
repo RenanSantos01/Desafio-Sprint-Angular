@@ -6,54 +6,105 @@
   "vehicle": [
     {
       "id": 1,
-      "model": "Ford Mustang",
-      "code": "2FRHDUYS2Y63NHD22454",
+      "model": "Mustang",
+      "code": "1FA6P8TH0J5100001",
       "image": "mustang.png"
     },
     {
       "id": 2,
-      "model": "Ford Ranger",
-      "code": "1FTBR1C87LKA12345",
+      "model": "Ranger",
+      "code": "1FT8W3BT5JEC00002",
       "image": "ranger.png"
     },
     {
       "id": 3,
-      "model": "Ford EcoSport",
-      "code": "3FA6P0H74JR123456",
-      "image": "ecosport.png"
+      "model": "Territory",
+      "code": "LVBV4A1A6NBJ00003",
+      "image": "territory.png"
+    },
+    {
+      "id": 4,
+      "model": "Bronco Sport",
+      "code": "3FMCR9B60NRD00004",
+      "image": "bronco.png"
     }
   ],
 
   "vehicleData": [
     {
-      "code": "2FRHDUYS2Y63NHD22454",
-      "model": "Ford Mustang",
-      "year": 2022,
-      "price": 350000,
+      "code": "1FA6P8TH0J5100001",
+      "model": "Mustang",
+      "year": 2023,
+      "price": 320000,
       "status": "Ativo",
-      "totalSales": 1250,
-      "connected": 980,
-      "softwareUpdated": 920
+      "totalSales": 1500,
+      "connected": 900,
+      "softwareUpdated": 750
     },
     {
-      "code": "1FTBR1C87LKA12345",
-      "model": "Ford Ranger",
-      "year": 2023,
+      "code": "1FT8W3BT5JEC00002",
+      "model": "Ranger",
+      "year": 2022,
+      "price": 250000,
+      "status": "Ativo",
+      "totalSales": 1000,
+      "connected": 800,
+      "softwareUpdated": 720
+    },
+    {
+      "code": "LVBV4A1A6NBJ00003",
+      "model": "Territory",
+      "year": 2021,
+      "price": 210000,
+      "status": "Ativo",
+      "totalSales": 650,
+      "connected": 530,
+      "softwareUpdated": 420
+    },
+    {
+      "code": "3FMCR9B60NRD00004",
+      "model": "Bronco Sport",
+      "year": 2022,
       "price": 280000,
       "status": "Ativo",
-      "totalSales": 1750,
-      "connected": 1400,
-      "softwareUpdated": 1300
+      "totalSales": 480,
+      "connected": 350,
+      "softwareUpdated": 290
+    }
+  ],
+
+  "vehicleVin": [
+    {
+      "code": "2FRHDUYS2Y63NHD22454",
+      "odometro": "23344 km",
+      "nivelCombustivel": "76%",
+      "status": "on",
+      "lat": -12.2322,
+      "long": -35.2314
     },
     {
-      "code": "3FA6P0H74JR123456",
-      "model": "Ford EcoSport",
-      "year": 2021,
-      "price": 160000,
-      "status": "Inativo",
-      "totalSales": 950,
-      "connected": 700,
-      "softwareUpdated": 650
+      "code": "2RFAASDY54E4HDU34874",
+      "odometro": "130000 km",
+      "nivelCombustivel": "19%",
+      "status": "off",
+      "lat": -12.2322,
+      "long": -35.2314
+    },
+    {
+      "code": "2FRHDUYS2Y63NHD22455",
+      "odometro": "50000 km",
+      "nivelCombustivel": "90%",
+      "status": "on",
+      "lat": -12.2322,
+      "long": -35.2314
+    },
+    {
+      "code": "2RFAASDY54E4HDU34875",
+      "odometro": "10000 km",
+      "nivelCombustivel": "25%",
+      "status": "off",
+      "lat": -12.2322,
+      "long": -35.2314
     }
   ]
 }
