@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, catchError, of } from 'rxjs';
+import { Observable, catchError, of, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private apiUrl = 'http://localhost:3001/login'; // ✅ endpoint da sua API
+
+  private apiUrl = 'http://localhost:3001/login'; // endpoint certo da API
 
   constructor(private http: HttpClient) {}
 
-  authenticate(username: string, password: string): Observable<boolean> {
-    return this.http.post<{ success: boolean }>(this.apiUrl, { username, password }).pipe(
-      map(response => response.success),
-      catchError(() => of(false))
+  authenticate(nome: string, senha: string): Observable<any> {
+    return this.http.post(this.apiUrl, { nome, senha }).pipe(
+      map((res: any) => res), // retorna os dados do usuário
+      catchError(() => of(null)) // devolve null se der erro
     );
   }
 }

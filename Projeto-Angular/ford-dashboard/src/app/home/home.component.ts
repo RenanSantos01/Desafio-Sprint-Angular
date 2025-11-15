@@ -10,27 +10,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  username = localStorage.getItem('username') || 'Usuário';
-  menuOpen = false;
+  username: string = localStorage.getItem('username') || 'Usuário';
+  menuOpen: boolean = false;
 
   constructor(private router: Router) {}
 
-  goToDashboard() {
-    this.router.navigate(['/dashboard']);
-  }
-
+  // 🔹 Abre ou fecha o menu lateral
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
 
+  // 🔹 Vai para o Dashboard
+  goToDashboard() {
+    this.router.navigate(['/dashboard']);
+  }
+
+  // 🔹 Faz logout corretamente
   logout() {
-    // 🔹 Limpa dados de login
-    localStorage.removeItem('user');
     localStorage.removeItem('username');
     localStorage.removeItem('isLoggedIn');
     sessionStorage.clear();
 
-    // 🔹 Redireciona para login
     this.router.navigate(['/login']);
   }
 }

@@ -7,37 +7,39 @@
     <label for="modelSelect">Selecione o modelo:</label>
     <select id="modelSelect" [(ngModel)]="selectedModel">
       <option value="" disabled selected>Escolha um modelo</option>
-      <option *ngFor="let v of vehicles" [value]="v.model">{{ v.model }}</option>
+      <option *ngFor="let v of vehicles" [value]="v.vehicle">
+        {{ v.vehicle }}
+      </option>
     </select>
     <button (click)="selectVehicle()">Buscar</button>
   </div>
 
-  <!-- 🔹 Cards -->
-  <div class="cards" *ngIf="vehicleData">
+  <!-- 🔹 Cards (dados vêm de selectedVehicle) -->
+  <div class="cards" *ngIf="selectedVehicle">
     <div class="card">
       <h3>Total de Vendas</h3>
-      <p>{{ vehicleData.totalSales }}</p>
+      <p>{{ selectedVehicle.volumetotal }}</p>
     </div>
     <div class="card">
       <h3>Veículos Conectados</h3>
-      <p>{{ vehicleData.connected }}</p>
+      <p>{{ selectedVehicle.connected }}</p>
     </div>
     <div class="card">
       <h3>Software Atualizado</h3>
-      <p>{{ vehicleData.softwareUpdated }}</p>
+      <p>{{ selectedVehicle.softwareUpdates }}</p>
     </div>
   </div>
 
-  <!-- 🔹 Imagem -->
+  <!-- 🔹 Imagem do veículo -->
   <div class="vehicle-section" *ngIf="selectedVehicle">
     <img
-      [src]="'assets/' + selectedVehicle.image"
-      [alt]="selectedVehicle.model"
+      [src]="selectedVehicle.img"
+      [alt]="selectedVehicle.vehicle"
       class="vehicle-image"
     />
   </div>
 
-  <!-- 🔹 NOVA SEÇÃO: Busca por VIN -->
+  <!-- 🔹 Seção VIN -->
   <div class="vin-section">
     <h2>Buscar por Código VIN</h2>
 
@@ -50,7 +52,7 @@
       <button (click)="searchByVin()">Buscar</button>
     </div>
 
-    <!-- 🔹 Exibir dados VIN -->
+    <!-- 🔹 Exibir dados VIN (vindos da API) -->
     <div class="vin-table" *ngIf="vinData">
       <h3>Detalhes do Veículo</h3>
       <table>
@@ -66,7 +68,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>{{ vinData.code }}</td>
+            <td>{{ vinData.id }}</td>
             <td>{{ vinData.odometro }}</td>
             <td>{{ vinData.nivelCombustivel }}</td>
             <td>{{ vinData.status }}</td>
