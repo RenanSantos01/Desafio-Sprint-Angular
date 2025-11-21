@@ -24,17 +24,17 @@ export class DashboardComponent {
     this.loadVehicles();
   }
 
-  // ✔ sua API retorna { vehicles: [...] }
+  
   loadVehicles() {
     this.api.getVehicles().subscribe({
       next: (data) => {
-        this.vehicles = data.vehicles; // PEGA O ARRAY CERTO
+        this.vehicles = data.vehicles; 
       },
       error: (err) => console.error('Erro ao carregar veículos:', err)
     });
   }
 
-  // ✔ filtra no frontend (já que sua API NÃO tem /vehicle?model=)
+  
   selectVehicle() {
     if (!this.selectedModel) return;
 
@@ -43,7 +43,7 @@ export class DashboardComponent {
     ) || null;
   }
 
-  // ✔ VIN usa POST (como na sua API)
+  
   searchByVin() {
     if (!this.vinCode) return;
 

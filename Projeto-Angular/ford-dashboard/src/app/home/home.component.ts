@@ -15,17 +15,17 @@ export class HomeComponent {
 
   constructor(private router: Router) {}
 
-  // 🔹 Abre ou fecha o menu lateral
+  
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
 
-  // 🔹 Vai para o Dashboard
+  
   goToDashboard() {
     this.router.navigate(['/dashboard']);
   }
 
-  // 🔹 Faz logout corretamente
+  
   logout() {
     localStorage.removeItem('username');
     localStorage.removeItem('isLoggedIn');

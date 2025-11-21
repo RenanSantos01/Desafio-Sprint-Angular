@@ -14,7 +14,7 @@
   text-transform: uppercase;
 }
 
-/* 🔹 Seleção de modelo */
+/* Seleção de modelo */
 .search-box {
   margin-bottom: 40px;
 }
@@ -42,7 +42,7 @@
   background-color: #005fa3;
 }
 
-/* 🔹 Cards */
+/* Cards */
 .cards {
   display: flex;
   justify-content: center;
@@ -68,7 +68,7 @@
   font-weight: bold;
 }
 
-/* 🔹 Imagem */
+/* Imagem */
 .vehicle-image {
   width: 500px;
   max-width: 90%;
@@ -77,7 +77,7 @@
   margin: 40px 0;
 }
 
-/* 🔹 Seção VIN */
+/* Seção VIN */
 .vin-section {
   margin-top: 50px;
 }
@@ -108,7 +108,7 @@
   background-color: #005fa3;
 }
 
-/* 🔹 Tabela VIN */
+/* Tabela VIN */
 .vin-table table {
   width: 80%;
   margin: 0 auto;

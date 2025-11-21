@@ -39,12 +39,9 @@
 
 /* 🔹 Botão de sair */
 .logout-btn {
-  /* Remova ou comente estas linhas de posicionamento fixo */
-  /* position: fixed;
-  top: 20px;
-  right: 20px; */
-  margin: 30px 25px 0 25px; /* ⬅️ adicione margem para espaçamento interno */
-  width: calc(100% - 50px); /* ⬅️ botão ocupa quase toda largura da barra */
+  
+  margin: 30px 25px 0 25px; 
+  width: calc(100% - 50px); 
   background-color: #c62828;
   color: white;
   border: none;
@@ -78,7 +75,7 @@
   padding-top: 80px;
   transition: transform 0.3s ease;
   transform: translateX(-220px);
-  z-index: 100; /* ⬅️ aumente o z-index aqui */
+  z-index: 100; 
 }
 
 .side-menu.open {
@@ -107,15 +104,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* ⬅️ adicione position: relative */
-  z-index: 1;         /* ⬅️ defina z-index menor que a side-menu */
+  position: relative; 
+  z-index: 1;         
 }
 
 .main-content.shift {
-  margin-left: 220px; /* empurra tudo suavemente */
+  margin-left: 220px; 
 }
 
-/* 🔹 Cartão central */
+/* Cartão central */
 .welcome-card {
   background-color: rgba(255, 255, 255, 0.85);
   padding: 40px;

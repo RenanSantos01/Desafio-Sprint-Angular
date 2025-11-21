@@ -1,20 +1,22 @@
 <div class="dashboard-container">
-  <!-- 🔹 Título -->
+  
   <h1 class="title">Dashboard Ford</h1>
 
-  <!-- 🔹 Seleção de veículo -->
+  <!-- Seleção de veículo -->
   <div class="search-box">
     <label for="modelSelect">Selecione o modelo:</label>
-    <select id="modelSelect" [(ngModel)]="selectedModel">
+    <select id="modelSelect"
+            [(ngModel)]="selectedModel"
+            (change)="selectVehicle()">
       <option value="" disabled selected>Escolha um modelo</option>
       <option *ngFor="let v of vehicles" [value]="v.vehicle">
         {{ v.vehicle }}
       </option>
     </select>
-    <button (click)="selectVehicle()">Buscar</button>
+    
   </div>
 
-  <!-- 🔹 Cards (dados vêm de selectedVehicle) -->
+  <!-- Cards (dados vêm de selectedVehicle) -->
   <div class="cards" *ngIf="selectedVehicle">
     <div class="card">
       <h3>Total de Vendas</h3>
@@ -30,7 +32,7 @@
     </div>
   </div>
 
-  <!-- 🔹 Imagem do veículo -->
+  
   <div class="vehicle-section" *ngIf="selectedVehicle">
     <img
       [src]="selectedVehicle.img"
@@ -39,7 +41,7 @@
     />
   </div>
 
-  <!-- 🔹 Seção VIN -->
+  <!-- Seção VIN -->
   <div class="vin-section">
     <h2>Buscar por Código VIN</h2>
 

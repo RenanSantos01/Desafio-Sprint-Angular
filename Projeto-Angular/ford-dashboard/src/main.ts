@@ -8,6 +8,6 @@ bootstrapApplication(AppComponent, {
   ...appConfig,
   providers: [
     ...(appConfig.providers || []),
-    importProvidersFrom(BrowserAnimationsModule) // ✅ Necessário para Angular Material
+    importProvidersFrom(BrowserAnimationsModule) 
   ]
 }).catch((err) => console.error(err));

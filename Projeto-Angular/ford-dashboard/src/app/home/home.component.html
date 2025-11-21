@@ -1,20 +1,20 @@
 <div class="home-page">
-  <!-- 🔹 Imagem de fundo -->
+  
   <img src="assets/ford-storm.png" alt="Ford Background" class="background-image" />
 
-  <!-- 🔹 Botão de menu (☰) -->
+  
   <div class="menu">
     <button class="menu-btn" (click)="toggleMenu()">☰</button>
   </div>
 
-  <!-- 🔹 Menu lateral -->
+  <!-- Menu lateral -->
   <div class="side-menu" [class.open]="menuOpen">
     <a routerLink="/home" (click)="toggleMenu()">🏠 Home</a>
     <button class="dashboard-btn" (click)="goToDashboard(); toggleMenu()">📊 Dashboard</button>
     <button class="logout-btn" (click)="logout()">🚪 Sair</button>
   </div>
 
-  <!-- 🔹 Conteúdo principal (empurrado pelo menu) -->
+  
   <div class="main-content" [class.shift]="menuOpen">
     <div class="welcome-card">
       <h2>Bem-vindo, {{ username }}!</h2>
