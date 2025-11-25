@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';   // ⬅ IMPORTANTE!
+import { RouterModule } from '@angular/router';   
 import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule, RouterModule], // ⬅ ADICIONADO AQUI
+  imports: [CommonModule, FormsModule, HttpClientModule, RouterModule], 
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
