@@ -1,5 +1,10 @@
 <div class="dashboard-container">
-  
+
+  <!-- 🔙 Botão de Voltar -->
+  <a routerLink="/home" class="back-button">
+    ← Voltar
+  </a>
+
   <h1 class="title">Dashboard Ford</h1>
 
   <!-- Seleção de veículo -->
@@ -13,10 +18,9 @@
         {{ v.vehicle }}
       </option>
     </select>
-    
   </div>
 
-  <!-- Cards (dados vêm de selectedVehicle) -->
+  <!-- Cards -->
   <div class="cards" *ngIf="selectedVehicle">
     <div class="card">
       <h3>Total de Vendas</h3>
@@ -32,7 +36,7 @@
     </div>
   </div>
 
-  
+  <!-- Imagem do veículo -->
   <div class="vehicle-section" *ngIf="selectedVehicle">
     <img
       [src]="selectedVehicle.img"
@@ -54,7 +58,7 @@
       <button (click)="searchByVin()">Buscar</button>
     </div>
 
-    <!-- 🔹 Exibir dados VIN (vindos da API) -->
+    <!-- Exibir dados VIN -->
     <div class="vin-table" *ngIf="vinData">
       <h3>Detalhes do Veículo</h3>
       <table>

@@ -5,6 +5,28 @@
   color: #003366;
   background: linear-gradient(135deg, #e8f0ff, #ffffff);
   min-height: 100vh;
+  position: relative;
+}
+
+/* Botão de voltar */
+.back-button {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #004aad;
+  text-decoration: none;
+  background: #e6eefc;
+  padding: 8px 14px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  background-color: #cdddfc;
+  transform: translateX(-3px);
 }
 
 .title {
@@ -27,19 +49,6 @@
   width: 260px;
   margin-right: 10px;
   outline: none;
-}
-
-.search-box button {
-  padding: 10px 18px;
-  background-color: #0076ce;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.search-box button:hover {
-  background-color: #005fa3;
 }
 
 /* Cards */

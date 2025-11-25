@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';   // ⬅ IMPORTANTE!
 import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, HttpClientModule, RouterModule], // ⬅ ADICIONADO AQUI
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
@@ -24,26 +25,20 @@ export class DashboardComponent {
     this.loadVehicles();
   }
 
-  
   loadVehicles() {
     this.api.getVehicles().subscribe({
       next: (data) => {
-        this.vehicles = data.vehicles; 
+        this.vehicles = data.vehicles;
       },
       error: (err) => console.error('Erro ao carregar veículos:', err)
     });
   }
 
-  
   selectVehicle() {
     if (!this.selectedModel) return;
-
-    this.selectedVehicle = this.vehicles.find(
-      v => v.vehicle === this.selectedModel
-    ) || null;
+    this.selectedVehicle = this.vehicles.find(v => v.vehicle === this.selectedModel) || null;
   }
 
-  
   searchByVin() {
     if (!this.vinCode) return;
 
